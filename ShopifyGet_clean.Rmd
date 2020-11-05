@@ -41,6 +41,9 @@ library(data.table)
 
 
 ```{r get days between dates, echo=FALSE}
+#pull api keys into environment
+source('storeget_keys.r')
+
 #determine how far back to pull data in days
 
 shopstartdate <- as.Date("2018-06-01")
@@ -49,7 +52,7 @@ today <- Sys.Date()
 today-shopstartdate
 
 #assign look-back quantity of days
-days <- 15
+days <- 2
 ```
 
 
