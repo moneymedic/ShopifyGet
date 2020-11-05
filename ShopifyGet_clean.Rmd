@@ -42,6 +42,7 @@ library(data.table)
 
 ```{r get days between dates, echo=FALSE}
 #pull api keys into environment
+#requires separate .r file titled `storeget_keys.r` to be saved with api keys for store url, api key, and api password.
 source('storeget_keys.r')
 
 #determine how far back to pull data in days
@@ -60,9 +61,9 @@ days <- 2
 
 #pull from shopify
 orders_0 <- shopr_get_orders(
-  shopURL = "https://yourstore.myshopify.com", 
-  APIKey = "api_key", 
-  APIPassword = "api_password",
+  shopURL = "sho-_store_url", 
+  APIKey = "shop_API_Key", 
+  APIPassword = "shop_API_Pass",
   created_at_min = Sys.time() - 60*60*24*days,
   created_at_max = NULL
 )
