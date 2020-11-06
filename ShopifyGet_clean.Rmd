@@ -13,6 +13,13 @@ knitr::opts_chunk$set(echo = TRUE)
 ## R Markdown
 
 This markdown file extracts table data from the Shopify
+Parking lot list: 
+  -Determine which record for each order is the one to keep
+  -Calculate per unit wholesale rate
+  -Check quantities and sum to manual data output (old method)
+  -Bring in relationship, financial heirarchy, product heirarchy tables
+  -Determine which export files need to be created as exports to google sheets
+  -Set up google sheets connection for pulling and pushing data
 
 ```{r Shopify Setup echo = FALSE}
 #https://www.gormanalysis.com/blog/pulling-shopify-data-into-r-with-shopr/
