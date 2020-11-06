@@ -136,11 +136,30 @@ write.xlsx(
   showNA = TRUE,
   password = NULL
 )
-
 ```
 
 
 ```{r run code to here}
 
 ```
+
+```{r get and manage products}
+products_0 <- shopr_get_products(
+  shopURL = shop_store_url,
+  APIKey = shop_API_Key, 
+  APIPassword = shop_API_Pass)
+products <- products_0$products
+pvariants <- products_0$variants
+products <- rename(products,
+                   product_id = id
+                   )
+pvariants <- rename(pvariants,
+                    variant_id = id,
+                    variant_title = title,
+                    msrp = price)
+products_1 <- left_join(select(products,"product_id","title","product_type"),
+                        select(pvariants,"sku","msrp","option1","product_id"),
+                        by = c("product_id"), keep = FALSE)
+```
+
 
